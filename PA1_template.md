@@ -12,26 +12,6 @@ output:
 ```r
 # load relevant libraries
 library(dplyr)
-```
-
-```
-## 
-## Attaching package: 'dplyr'
-```
-
-```
-## The following objects are masked from 'package:stats':
-## 
-##     filter, lag
-```
-
-```
-## The following objects are masked from 'package:base':
-## 
-##     intersect, setdiff, setequal, union
-```
-
-```r
 library(lattice)
 
 # download data
@@ -61,7 +41,7 @@ df.by_date <- df %>%
 hist(df.by_date$steps, main = "Histogram of total number of steps taken per day", breaks = 10, xlab = "Steps")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-2-1.png)<!-- -->
+![plot of chunk unnamed-chunk-42](figure/unnamed-chunk-42-1.png)
 
 ```r
 # calculate mean of daily total steps
@@ -96,7 +76,7 @@ df.by_interval <- df %>%
 plot(df.by_interval$interval, df.by_interval$steps, main = "Plot of average daily acitity pattern", xlab = "Interval", ylab = "Steps", type = "l")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-3-1.png)<!-- -->
+![plot of chunk unnamed-chunk-43](figure/unnamed-chunk-43-1.png)
 
 ```r
 # show interval with most steps
@@ -147,7 +127,7 @@ df.subst.by_date <- df.subst %>%
 hist(df.subst.by_date$steps, main = "Histogram of total number of steps taken per day\n(higher peak between 10k-12k)", breaks = 10, xlab = "Steps")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-4-1.png)<!-- -->
+![plot of chunk unnamed-chunk-44](figure/unnamed-chunk-44-1.png)
 
 ```r
 # calculate mean of daily total steps
@@ -194,4 +174,4 @@ df.daytype.by_interval <- df.daytype %>%
 with(df.daytype.by_interval, xyplot(steps ~ interval | DayType, type = "l", xlab = "Interval", ylab = "Number of steps", layout = c(1,2)))
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-5-1.png)<!-- -->
+![plot of chunk unnamed-chunk-45](figure/unnamed-chunk-45-1.png)
